@@ -3,10 +3,9 @@ import ya from "../../content/ya.json";
 
 const socials = [
   { label: "Spotify", href: ya.links.spotify },
-  { label: "YouTube · officialyabd", href: ya.links.youtubeOfficial },
-  { label: "YouTube · yagoddy", href: ya.links.youtubeGoddy },
-  { label: "Instagram · @ya_01274", href: ya.links.instagramYa },
-  { label: "Instagram · @yagoddy", href: ya.links.instagramGoddy },
+  { label: "Apple Music", href: ya.links.appleMusic },
+  { label: "YouTube", href: ya.links.youtube },
+  { label: "Instagram", href: ya.links.instagram },
   { label: "SoundCloud", href: ya.links.soundcloud },
 ];
 
@@ -27,11 +26,11 @@ const year = new Date().getFullYear();
         Follow YA where you stream, where you scroll, where you watch.
       </p>
       <a
-        href={`mailto:bookings@ya-music.com?subject=Booking%20enquiry%20·%20YA`}
+        href={`mailto:${ya.bookingEmail}?subject=Booking%20enquiry%20%C2%B7%20YA`}
         class="mt-8 inline-flex items-center gap-3 border border-traffic bg-traffic/10 px-6 py-3 font-mono text-xs uppercase tracking-[0.3em] text-traffic transition-all hover:bg-traffic hover:text-asphalt"
       >
         <span class="inline-block h-1.5 w-1.5 rounded-full bg-traffic" />
-        Booking · enquiries
+        Booking · {ya.bookingEmail}
       </a>
     </div>
 
@@ -63,7 +62,7 @@ const year = new Date().getFullYear();
 
   <div class="mx-auto mt-20 flex max-w-7xl flex-col gap-4 border-t border-concrete/10 pt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-concrete/40 sm:flex-row sm:items-center sm:justify-between">
     <span>© {year} YA · 01274</span>
-    <span>YA-Music.com — built as a fan tribute</span>
+    <span>YA-Music.com — fan tribute</span>
     <span class="opacity-60">v0.1 · phase 1</span>
   </div>
 </footer>

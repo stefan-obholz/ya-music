@@ -262,7 +262,7 @@ export default function DialScene() {
 
       {/* Bottom marquee strip */}
       <div className="pointer-events-none absolute bottom-6 left-6 right-6 flex justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-concrete/40 sm:bottom-10 sm:left-10 sm:right-10">
-        <span>YA / YA GODDY</span>
+        <span>YA · Bradford</span>
         <span>scroll ↓</span>
       </div>
     </div>

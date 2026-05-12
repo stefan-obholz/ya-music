@@ -1,42 +1,43 @@
 {
   "name": "YA",
-  "alias": "YA GODDY",
   "city": "Bradford, West Yorkshire",
   "areaCode": "01274",
   "tagline": "The kid from 01274.",
+  "bio": "YA comes from the estates of Bradford, West Yorkshire. Razor-sharp rhymes over hard-hitting bassline beats. 20M+ streams independent. Featured in Red Bull's Red Bulletin. Recent project: Mind Of A Grafta (2025).",
   "stats": {
     "totalStreams": 20000000,
-    "monthlyListeners": 43584,
-    "spotifyFollowers": 12723
+    "monthlyListeners": 142037,
+    "spotifyFollowers": 31276
   },
   "topTracks": [
-    { "title": "RED BULL", "streams": 533443, "spotifyId": null },
-    { "title": "1942", "streams": 327123, "spotifyId": null },
-    { "title": "NEW YEAR NEW ME", "streams": 283149, "spotifyId": null },
-    { "title": "WHOS THAT IN THE BACK", "streams": 90044, "spotifyId": null },
-    { "title": "DRINK", "streams": 84448, "spotifyId": null }
+    { "title": "Bradford Army", "feat": "Kav & Marky B", "streams": 6312643, "year": 2021 },
+    { "title": "NO HOOK", "feat": null, "streams": 2662615, "year": 2023 },
+    { "title": "Numerous Bootings", "feat": "Allstars Remix", "streams": 1504296, "year": 2025 },
+    { "title": "Falling", "feat": null, "streams": 597756, "year": 2024 },
+    { "title": "Robbers & Drivers", "feat": "Marky B & Mush", "streams": 485519, "year": 2025 }
   ],
   "albums": [
-    { "title": "SE6FIGUREDREAMZ", "year": 2026 },
-    { "title": "Baba Yaga", "year": 2023 },
-    { "title": "BEAM ME UP SCOTTY", "year": 2023 }
+    { "title": "Drift Away", "year": 2026 },
+    { "title": "Mind Of A Grafta", "year": 2025 },
+    { "title": "Rondade", "year": 2024 },
+    { "title": "Falling", "year": 2024 },
+    { "title": "NO HOOK", "year": 2023 },
+    { "title": "Bradford Army", "year": 2021 }
   ],
+  "collaborators": ["Marky B", "KAV", "Mush", "Sluggy Beats", "S Dog", "Fraz", "Molegrip", "Blair Muir", "Rayner"],
   "press": [
     "Featured in Red Bull's Red Bulletin",
     "Top 10 SoundCloud All Genres Charts",
     "20M+ streams independent",
-    "Bradford Army w/ KAV & Marky B"
+    "Bradford bassline · UK rap"
   ],
   "links": {
-    "spotify": "https://open.spotify.com/artist/3kkviWT1QqUUoseKmk4zC6",
-    "youtubeOfficial": "https://www.youtube.com/@officialyabd",
-    "youtubeGoddy": "https://www.youtube.com/@yagoddy",
-    "instagramYa": "https://www.instagram.com/ya_01274/",
-    "instagramGoddy": "https://www.instagram.com/yagoddy/",
-    "soundcloud": "https://soundcloud.com/yabradford"
+    "spotify": "https://open.spotify.com/artist/2lfx4F5uxI1ayp3nKo3gY9",
+    "appleMusic": "https://music.apple.com/us/artist/ya/1545145273",
+    "youtube": "https://www.youtube.com/@officialyabd",
+    "instagram": "https://www.instagram.com/ya_01274/",
+    "soundcloud": "https://soundcloud.com/ya29216"
   },
-  "youtubeChannelIds": {
-    "officialyabd": "UCDW8wmKVIwNmges358L0ELw",
-    "yagoddy": "UCCXQrVJi86Fg6PqvJHWuivA"
-  }
+  "youtubeChannelId": "UCDW8wmKVIwNmges358L0ELw",
+  "bookingEmail": "YAbradfordcity@gmail.com"
 }

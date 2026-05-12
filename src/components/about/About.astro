@@ -7,6 +7,12 @@ const stats = [
   { label: "City", value: "1" },
   { label: "Area code", value: ya.areaCode },
 ];
+
+const formatStreams = (n: number) => {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
+  if (n >= 1_000) return `${Math.round(n / 1_000)}k`;
+  return String(n);
+};
 ---
 
 <section id="about" class="relative border-t border-concrete/10 px-6 py-24 sm:px-10 sm:py-40">
@@ -20,14 +26,16 @@ const stats = [
           The kid<br/>from<br/><span class="text-traffic">01274</span>.
         </h2>
         <p class="mt-8 max-w-md text-base leading-relaxed text-concrete/70">
-          YA — also rolling as <span class="text-concrete">YA GODDY</span> — is the rapper out
-          of {ya.city} who took 20M+ streams without a label, without a co-sign, without leaving the estate.
+          YA out of <span class="text-concrete">{ya.city}</span> — razor-sharp rhymes over hard-hitting
+          bassline beats, straight off the estates. 20M+ streams without a label, without a co-sign.
         </p>
         <p class="mt-4 max-w-md text-base leading-relaxed text-concrete/70">
-          Razor-sharp bars over hard-hitting beats. Tracks like <em class="text-concrete not-italic">RED BULL</em>,
-          <em class="text-concrete not-italic">1942</em> and <em class="text-concrete not-italic">NEW YEAR NEW ME</em> have
-          racked up hundreds of thousands of streams a piece. Featured in Red Bull's
-          <em class="text-concrete not-italic">Red Bulletin</em>. Top 10 SoundCloud charts.
+          <em class="text-concrete not-italic">Bradford Army</em> with KAV & Marky B alone clocked over
+          6 million streams. Tracks like <em class="text-concrete not-italic">NO HOOK</em>,
+          <em class="text-concrete not-italic">Robbers & Drivers</em> and the 2025 album
+          <em class="text-concrete not-italic">Mind Of A Grafta</em> kept the run going.
+          Featured in Red Bull's <em class="text-concrete not-italic">Red Bulletin</em>. Consistent
+          Top 10 on SoundCloud's all-genres charts.
         </p>
       </div>
     </div>
@@ -74,9 +82,14 @@ const stats = [
               </span>
               <span class="font-display flex-1 text-xl uppercase tracking-tight text-concrete transition-colors group-hover:text-traffic sm:text-2xl">
                 {t.title}
+                {t.feat && (
+                  <span class="ml-2 font-body text-xs lowercase tracking-normal text-concrete/40">
+                    feat. {t.feat}
+                  </span>
+                )}
               </span>
               <span class="font-mono text-[11px] text-concrete/40">
-                {(t.streams / 1000).toFixed(0)}k
+                {formatStreams(t.streams)}
               </span>
             </li>
           ))}
