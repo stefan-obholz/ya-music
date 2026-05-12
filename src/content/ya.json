@@ -1,0 +1,42 @@
+{
+  "name": "YA",
+  "alias": "YA GODDY",
+  "city": "Bradford, West Yorkshire",
+  "areaCode": "01274",
+  "tagline": "The kid from 01274.",
+  "stats": {
+    "totalStreams": 20000000,
+    "monthlyListeners": 43584,
+    "spotifyFollowers": 12723
+  },
+  "topTracks": [
+    { "title": "RED BULL", "streams": 533443, "spotifyId": null },
+    { "title": "1942", "streams": 327123, "spotifyId": null },
+    { "title": "NEW YEAR NEW ME", "streams": 283149, "spotifyId": null },
+    { "title": "WHOS THAT IN THE BACK", "streams": 90044, "spotifyId": null },
+    { "title": "DRINK", "streams": 84448, "spotifyId": null }
+  ],
+  "albums": [
+    { "title": "SE6FIGUREDREAMZ", "year": 2026 },
+    { "title": "Baba Yaga", "year": 2023 },
+    { "title": "BEAM ME UP SCOTTY", "year": 2023 }
+  ],
+  "press": [
+    "Featured in Red Bull's Red Bulletin",
+    "Top 10 SoundCloud All Genres Charts",
+    "20M+ streams independent",
+    "Bradford Army w/ KAV & Marky B"
+  ],
+  "links": {
+    "spotify": "https://open.spotify.com/artist/3kkviWT1QqUUoseKmk4zC6",
+    "youtubeOfficial": "https://www.youtube.com/@officialyabd",
+    "youtubeGoddy": "https://www.youtube.com/@yagoddy",
+    "instagramYa": "https://www.instagram.com/ya_01274/",
+    "instagramGoddy": "https://www.instagram.com/yagoddy/",
+    "soundcloud": "https://soundcloud.com/yabradford"
+  },
+  "youtubeChannelIds": {
+    "officialyabd": "UCDW8wmKVIwNmges358L0ELw",
+    "yagoddy": "UCCXQrVJi86Fg6PqvJHWuivA"
+  }
+}

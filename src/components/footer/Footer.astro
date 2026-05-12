@@ -1,0 +1,69 @@
+---
+import ya from "../../content/ya.json";
+
+const socials = [
+  { label: "Spotify", href: ya.links.spotify },
+  { label: "YouTube · officialyabd", href: ya.links.youtubeOfficial },
+  { label: "YouTube · yagoddy", href: ya.links.youtubeGoddy },
+  { label: "Instagram · @ya_01274", href: ya.links.instagramYa },
+  { label: "Instagram · @yagoddy", href: ya.links.instagramGoddy },
+  { label: "SoundCloud", href: ya.links.soundcloud },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer id="links" class="border-t border-concrete/10 px-6 py-20 sm:px-10">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-24">
+    <div class="lg:col-span-5">
+      <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+        // outbound
+      </div>
+      <h2 class="font-display mt-6 text-[12vw] leading-[0.85] sm:text-[6vw] lg:text-[4vw]">
+        Pick up.<br/>
+        <span class="text-traffic">Anywhere.</span>
+      </h2>
+      <p class="mt-8 max-w-md text-concrete/60">
+        Follow YA where you stream, where you scroll, where you watch.
+      </p>
+      <a
+        href={`mailto:bookings@ya-music.com?subject=Booking%20enquiry%20·%20YA`}
+        class="mt-8 inline-flex items-center gap-3 border border-traffic bg-traffic/10 px-6 py-3 font-mono text-xs uppercase tracking-[0.3em] text-traffic transition-all hover:bg-traffic hover:text-asphalt"
+      >
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-traffic" />
+        Booking · enquiries
+      </a>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+        // channels
+      </div>
+      <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
+        {socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-baseline justify-between py-5 transition-colors hover:text-traffic"
+            >
+              <span class="font-display text-2xl uppercase tracking-tight sm:text-3xl">
+                {s.label}
+              </span>
+              <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-concrete/40 transition-colors group-hover:text-traffic">
+                visit ↗
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-20 flex max-w-7xl flex-col gap-4 border-t border-concrete/10 pt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-concrete/40 sm:flex-row sm:items-center sm:justify-between">
+    <span>© {year} YA · 01274</span>
+    <span>YA-Music.com — built as a fan tribute</span>
+    <span class="opacity-60">v0.1 · phase 1</span>
+  </div>
+</footer>

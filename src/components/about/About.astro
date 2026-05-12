@@ -1,0 +1,87 @@
+---
+import ya from "../../content/ya.json";
+
+const stats = [
+  { label: "Total streams", value: "20M+" },
+  { label: "Monthly listeners", value: ya.stats.monthlyListeners.toLocaleString("en-GB") },
+  { label: "City", value: "1" },
+  { label: "Area code", value: ya.areaCode },
+];
+---
+
+<section id="about" class="relative border-t border-concrete/10 px-6 py-24 sm:px-10 sm:py-40">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-24">
+    <div class="lg:col-span-5">
+      <div class="sticky top-10">
+        <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+          // 01 — about
+        </div>
+        <h2 class="font-display mt-6 text-[12vw] leading-[0.85] text-concrete sm:text-[7vw] lg:text-[5vw]">
+          The kid<br/>from<br/><span class="text-traffic">01274</span>.
+        </h2>
+        <p class="mt-8 max-w-md text-base leading-relaxed text-concrete/70">
+          YA — also rolling as <span class="text-concrete">YA GODDY</span> — is the rapper out
+          of {ya.city} who took 20M+ streams without a label, without a co-sign, without leaving the estate.
+        </p>
+        <p class="mt-4 max-w-md text-base leading-relaxed text-concrete/70">
+          Razor-sharp bars over hard-hitting beats. Tracks like <em class="text-concrete not-italic">RED BULL</em>,
+          <em class="text-concrete not-italic">1942</em> and <em class="text-concrete not-italic">NEW YEAR NEW ME</em> have
+          racked up hundreds of thousands of streams a piece. Featured in Red Bull's
+          <em class="text-concrete not-italic">Red Bulletin</em>. Top 10 SoundCloud charts.
+        </p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="grid grid-cols-2 gap-px bg-concrete/10">
+        {stats.map((s) => (
+          <div class="bg-asphalt p-6 sm:p-10">
+            <div class="font-mono text-[10px] uppercase tracking-[0.4em] text-concrete/40">
+              {s.label}
+            </div>
+            <div class="font-display mt-4 text-5xl text-concrete sm:text-7xl">
+              {s.value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16">
+        <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+          // discography
+        </div>
+        <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
+          {ya.albums.map((a) => (
+            <li class="flex items-baseline justify-between py-5">
+              <span class="font-display text-2xl uppercase tracking-tight text-concrete sm:text-3xl">
+                {a.title}
+              </span>
+              <span class="font-mono text-xs text-concrete/40">{a.year}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-16">
+        <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+          // top tracks
+        </div>
+        <ol class="mt-6 space-y-3">
+          {ya.topTracks.map((t, i) => (
+            <li class="group flex items-baseline gap-4 border-b border-concrete/5 py-3 transition-colors hover:border-traffic/40">
+              <span class="w-8 font-mono text-[11px] text-concrete/40">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span class="font-display flex-1 text-xl uppercase tracking-tight text-concrete transition-colors group-hover:text-traffic sm:text-2xl">
+                {t.title}
+              </span>
+              <span class="font-mono text-[11px] text-concrete/40">
+                {(t.streams / 1000).toFixed(0)}k
+              </span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
