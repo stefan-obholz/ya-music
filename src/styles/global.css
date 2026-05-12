@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Self-hosted fonts (no Google CDN, DSGVO-safe) */
+@import "@fontsource/anton/400.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
 @theme {
   --color-asphalt: #0a0a0a;
   --color-concrete: #f5f5f0;
@@ -8,30 +13,8 @@
   --color-redbull: #e10600;
 
   --font-display: "Anton", "Bebas Neue", "Impact", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-}
-
-@font-face {
-  font-family: "Anton";
-  src: url("https://fonts.gstatic.com/s/anton/v25/1Ptgg87LROyAm0K08i4gS7lu.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("https://fonts.gstatic.com/s/inter/v19/UcCo3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTQ2g.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 100 800;
+  --font-body: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 :root {
@@ -76,64 +59,22 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* Scanlines on heading */
-.scanlines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(255, 255, 255, 0.03) 2px,
-    rgba(255, 255, 255, 0.03) 3px
-  );
-}
-
-/* Display type */
 .font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
   line-height: 0.85;
 }
 
-/* Brutalist headline glitch on hover */
-.glitch {
-  position: relative;
-  display: inline-block;
-}
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 200ms;
-}
-.glitch:hover::before {
-  opacity: 0.8;
-  color: var(--color-traffic);
-  transform: translate(-2px, 0);
-  mix-blend-mode: screen;
-}
-.glitch:hover::after {
-  opacity: 0.8;
-  color: var(--color-roadsign);
-  transform: translate(2px, 0);
-  mix-blend-mode: screen;
-}
-
-/* Custom selection */
 ::selection {
   background: var(--color-traffic);
   color: var(--color-asphalt);
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -141,7 +82,6 @@ body::before {
   }
 }
 
-/* Marquee */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -150,7 +90,6 @@ body::before {
   animation: marquee 40s linear infinite;
 }
 
-/* Subtle pulse for live indicator */
 @keyframes live-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }

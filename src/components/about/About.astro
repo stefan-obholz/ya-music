@@ -31,9 +31,9 @@ const formatStreams = (n: number) => {
         </p>
         <p class="mt-4 max-w-md text-base leading-relaxed text-concrete/70">
           <em class="text-concrete not-italic">Bradford Army</em> with KAV & Marky B alone clocked over
-          6 million streams. Tracks like <em class="text-concrete not-italic">NO HOOK</em>,
-          <em class="text-concrete not-italic">Robbers & Drivers</em> and the 2025 album
-          <em class="text-concrete not-italic">Mind Of A Grafta</em> kept the run going.
+          6 million streams. The 2025 album <em class="text-concrete not-italic">Mind Of A Grafta</em>
+          kept the run going, with new singles like <em class="text-concrete not-italic">All I Know</em> and
+          <em class="text-concrete not-italic">German One</em> dropping in 2026.
           Featured in Red Bull's <em class="text-concrete not-italic">Red Bulletin</em>. Consistent
           Top 10 on SoundCloud's all-genres charts.
         </p>
@@ -56,7 +56,7 @@ const formatStreams = (n: number) => {
 
       <div class="mt-16">
         <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
-          // discography
+          // album
         </div>
         <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
           {ya.albums.map((a) => (
@@ -64,7 +64,28 @@ const formatStreams = (n: number) => {
               <span class="font-display text-2xl uppercase tracking-tight text-concrete sm:text-3xl">
                 {a.title}
               </span>
-              <span class="font-mono text-xs text-concrete/40">{a.year}</span>
+              <span class="font-mono text-xs text-concrete/40">{a.year} · {a.type}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+          // recent drops
+        </div>
+        <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
+          {ya.recentReleases.map((r) => (
+            <li class="flex items-baseline justify-between py-3.5">
+              <span class="font-display flex-1 text-lg uppercase tracking-tight text-concrete sm:text-xl">
+                {r.title}
+                {r.feat && (
+                  <span class="ml-2 font-body text-xs lowercase tracking-normal text-concrete/40">
+                    feat. {r.feat}
+                  </span>
+                )}
+              </span>
+              <span class="font-mono text-xs text-concrete/40">{r.year} · {r.type}</span>
             </li>
           ))}
         </ul>

@@ -1,0 +1,128 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <title>{title} · YA-Music.com</title>
+  </head>
+  <body class="bg-asphalt text-concrete font-body">
+    <nav class="border-b border-concrete/10 px-6 py-5 sm:px-10">
+      <div class="mx-auto flex max-w-3xl items-center justify-between">
+        <a href="/" class="font-display text-2xl uppercase tracking-tight text-concrete transition-colors hover:text-traffic">
+          YA · 01274
+        </a>
+        <div class="flex gap-6 font-mono text-[10px] uppercase tracking-[0.3em] text-concrete/40">
+          <a href="/impressum" class="transition-colors hover:text-traffic">Impressum</a>
+          <a href="/datenschutz" class="transition-colors hover:text-traffic">Datenschutz</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mx-auto max-w-3xl px-6 py-16 sm:px-10 sm:py-24">
+      <a
+        href="https://obholz-solutions.de"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mb-10 inline-flex items-center gap-3 opacity-80 transition-opacity hover:opacity-100"
+        aria-label="OBHOLZ SOLUTIONS"
+      >
+        <img src="/obholz-logo-white.svg" alt="OBHOLZ SOLUTIONS" width="56" height="56" class="h-14 w-14" />
+        <span class="font-display text-xl uppercase leading-none tracking-tight text-concrete">
+          OBHOLZ<br/>SOLUTIONS
+        </span>
+      </a>
+
+      <p class="font-mono text-[11px] uppercase tracking-[0.4em] text-traffic">// legal</p>
+      <h1 class="font-display mt-3 text-5xl uppercase leading-none text-concrete sm:text-6xl">
+        {title}
+      </h1>
+
+      <article class="prose-legal mt-10">
+        <slot />
+      </article>
+
+      <div class="mt-16 border-t border-concrete/10 pt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-concrete/40">
+        <a href="/" class="transition-colors hover:text-traffic">← back to YA-Music.com</a>
+      </div>
+    </main>
+
+    <style is:global>
+      .prose-legal h2 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        color: var(--color-concrete);
+        margin: 2.5rem 0 0.75rem;
+      }
+      .prose-legal h3 {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--color-traffic);
+        margin: 1.75rem 0 0.5rem;
+      }
+      .prose-legal p,
+      .prose-legal li {
+        color: rgba(245, 245, 240, 0.65);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      .prose-legal p { margin: 0 0 1rem; }
+      .prose-legal ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+      .prose-legal li { margin-bottom: 0.4rem; }
+      .prose-legal strong { color: var(--color-concrete); font-weight: 600; }
+      .prose-legal a {
+        color: var(--color-traffic);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-thickness: 1px;
+      }
+      .prose-legal a:hover { color: var(--color-concrete); }
+      .prose-legal table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0 1.5rem;
+        font-size: 0.85rem;
+      }
+      .prose-legal th {
+        text-align: left;
+        padding: 0.6rem 0.75rem;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: rgba(245, 245, 240, 0.4);
+        border-bottom: 1px solid rgba(245, 245, 240, 0.1);
+      }
+      .prose-legal td {
+        padding: 0.6rem 0.75rem;
+        color: rgba(245, 245, 240, 0.65);
+        border-bottom: 1px solid rgba(245, 245, 240, 0.05);
+      }
+      .prose-legal em {
+        color: rgba(245, 245, 240, 0.4);
+        font-style: normal;
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+      }
+    </style>
+  </body>
+</html>

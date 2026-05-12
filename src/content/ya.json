@@ -3,7 +3,7 @@
   "city": "Bradford, West Yorkshire",
   "areaCode": "01274",
   "tagline": "The kid from 01274.",
-  "bio": "YA comes from the estates of Bradford, West Yorkshire. Razor-sharp rhymes over hard-hitting bassline beats. 20M+ streams independent. Featured in Red Bull's Red Bulletin. Recent project: Mind Of A Grafta (2025).",
+  "bio": "YA comes from the estates of Bradford, West Yorkshire. Razor-sharp rhymes over hard-hitting bassline beats. 20M+ streams independent. Featured in Red Bull's Red Bulletin. Recent album: Mind Of A Grafta (2025).",
   "stats": {
     "totalStreams": 20000000,
     "monthlyListeners": 142037,
@@ -17,12 +17,18 @@
     { "title": "Robbers & Drivers", "feat": "Marky B & Mush", "streams": 485519, "year": 2025 }
   ],
   "albums": [
-    { "title": "Drift Away", "year": 2026 },
-    { "title": "Mind Of A Grafta", "year": 2025 },
-    { "title": "Rondade", "year": 2024 },
-    { "title": "Falling", "year": 2024 },
-    { "title": "NO HOOK", "year": 2023 },
-    { "title": "Bradford Army", "year": 2021 }
+    { "title": "Mind Of A Grafta", "year": 2025, "type": "Album" }
+  ],
+  "recentReleases": [
+    { "title": "All I Know", "feat": null, "year": 2026, "type": "Single" },
+    { "title": "German One", "feat": null, "year": 2026, "type": "Single" },
+    { "title": "Drift Away", "feat": null, "year": 2026, "type": "Single" },
+    { "title": "M A D", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Bradford Slang", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Hood Famous", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "For You", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Like It", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "MOLEGRIP DANCE", "feat": "MUSH & Blair Muir", "year": 2024, "type": "Single" }
   ],
   "collaborators": ["Marky B", "KAV", "Mush", "Sluggy Beats", "S Dog", "Fraz", "Molegrip", "Blair Muir", "Rayner"],
   "press": [
