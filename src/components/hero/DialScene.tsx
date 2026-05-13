@@ -46,31 +46,25 @@ export default function DialScene() {
   const [activeDigit, setActiveDigit] = useState(-1);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [isSmall, setIsSmall] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-    const mq = window.matchMedia("(max-width: 640px)");
-    setIsSmall(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsSmall(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
   }, []);
 
   // Crossfade timer
   useEffect(() => {
-    if (reducedMotion || isSmall) return;
+    if (reducedMotion) return;
     const id = window.setInterval(
       () => setActiveIndex((i) => (i + 1) % VIDEOS.length),
       CLIP_DURATION_MS
     );
     return () => window.clearInterval(id);
-  }, [reducedMotion, isSmall]);
+  }, [reducedMotion]);
 
   // Reset + play active video from start
   useEffect(() => {
-    if (reducedMotion || isSmall) return;
+    if (reducedMotion) return;
     const v = videoRefs.current[activeIndex];
     if (!v) return;
     try {
@@ -80,7 +74,7 @@ export default function DialScene() {
     } catch {
       /* ignore */
     }
-  }, [activeIndex, reducedMotion, isSmall]);
+  }, [activeIndex, reducedMotion]);
 
   const playDigit = (digit: string, index: number) => {
     if (typeof window === "undefined") return;
@@ -101,7 +95,7 @@ export default function DialScene() {
     DIAL_DIGITS.forEach((d, i) => setTimeout(() => playDigit(d, i), i * 280));
   };
 
-  const showVideoLayer = !reducedMotion && !isSmall;
+  const showVideoLayer = !reducedMotion;
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-asphalt">
