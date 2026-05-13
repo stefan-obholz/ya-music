@@ -155,13 +155,21 @@ export default function DialScene() {
         {showVideoLayer ? `Now: ${VIDEOS[activeIndex].track}` : "Live"}
       </div>
 
-      {/* The 01274 dial */}
+      {/* YA wordmark + 01274 dial */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-concrete/60">
-          // dial
+        <h1
+          className="font-display select-none text-[14vw] leading-none text-concrete sm:text-[10vw]"
+          style={{ filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.9))", letterSpacing: "-0.04em" }}
+        >
+          YA
+        </h1>
+        <div className="mt-3 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.4em] text-concrete/60 sm:mt-4">
+          <span className="h-px w-6 bg-concrete/30" />
+          the kid from
+          <span className="h-px w-6 bg-concrete/30" />
         </div>
         <div
-          className="mt-4 flex items-baseline gap-1 sm:gap-3"
+          className="mt-2 flex items-baseline gap-1 sm:mt-3 sm:gap-3"
           style={{ filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.85))" }}
         >
           {DIAL_DIGITS.map((d, i) => (
@@ -169,7 +177,7 @@ export default function DialScene() {
               key={i}
               type="button"
               onClick={() => playDigit(d, i)}
-              className={`font-display select-none text-[18vw] leading-none transition-all duration-200 sm:text-[14vw] ${
+              className={`font-display select-none text-[14vw] leading-none transition-all duration-200 sm:text-[11vw] ${
                 activeDigit === i
                   ? "scale-110 text-traffic"
                   : "text-concrete hover:text-traffic"
