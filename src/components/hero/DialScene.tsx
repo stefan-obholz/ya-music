@@ -62,18 +62,27 @@ export default function DialScene() {
     return () => window.clearInterval(id);
   }, [reducedMotion]);
 
-  // Reset + play active video from start
+  // Play active video; pause all others to free decoder + GPU
   useEffect(() => {
     if (reducedMotion) return;
-    const v = videoRefs.current[activeIndex];
-    if (!v) return;
-    try {
-      v.currentTime = 0;
-      const p = v.play();
-      if (p && typeof p.catch === "function") p.catch(() => {});
-    } catch {
-      /* ignore */
-    }
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === activeIndex) {
+        try {
+          v.currentTime = 0;
+          const p = v.play();
+          if (p && typeof p.catch === "function") p.catch(() => {});
+        } catch {
+          /* ignore */
+        }
+      } else {
+        try {
+          v.pause();
+        } catch {
+          /* ignore */
+        }
+      }
+    });
   }, [activeIndex, reducedMotion]);
 
   const playDigit = (digit: string, index: number) => {
@@ -107,9 +116,10 @@ export default function DialScene() {
             ref={(el) => {
               videoRefs.current[i] = el;
             }}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-out ${
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out ${
               i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
+            style={{ willChange: "opacity" }}
             autoPlay={i === 0}
             muted
             loop
@@ -118,8 +128,8 @@ export default function DialScene() {
             preload={i === 0 ? "auto" : "metadata"}
             aria-hidden="true"
           >
-            <source src={v.webm} type="video/webm" />
             <source src={v.mp4} type="video/mp4" />
+            <source src={v.webm} type="video/webm" />
           </video>
         ))}
 
