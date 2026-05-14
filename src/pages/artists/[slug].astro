@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import About from "../../components/about/About.astro";
+import Marquee from "../../components/press/Marquee.astro";
+import Footer from "../../components/footer/Footer.astro";
+import ArtistHero from "../../components/hero/ArtistHero.tsx";
+import kav from "../../content/artists/kav.json";
+import bailey from "../../content/artists/bailey-holmes.json";
+import charlie from "../../content/artists/charlie-choppa.json";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "kav" }, props: { artist: kav } },
+    { params: { slug: "bailey-holmes" }, props: { artist: bailey } },
+    { params: { slug: "charlie-choppa" }, props: { artist: charlie } },
+  ];
+}
+
+const { artist } = Astro.props;
+const cityLabel = artist.city.split(",")[0];
+
+const totalDisplay = artist.stats.totalStreamsDisplay || (
+  artist.stats.totalStreams >= 1000000
+    ? Math.round(artist.stats.totalStreams / 100000) / 10 + "M+"
+    : artist.stats.totalStreams.toLocaleString("en-GB")
+);
+
+const title = artist.name + " — " + artist.areaCode + " / " + cityLabel;
+const description = artist.name + " — UK rapper out of " + cityLabel + ". " + totalDisplay + " streams. " + artist.tagline;
+const ogImg = artist.ogImage || "/og-image-v2.png";
+const ogAlt = artist.name + " — " + cityLabel + ". " + totalDisplay + " streams.";
+const canonical = "/artists/" + artist.slug;
+const topTrack = artist.topTracks[0] ? artist.topTracks[0].title : "";
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage={ogImg}
+  ogImageAlt={ogAlt}
+  canonical={canonical}
+>
+  <ArtistHero
+    name={artist.name}
+    city={artist.city}
+    tagline={artist.tagline}
+    videos={artist.videos}
+    spotifyUrl={artist.links.spotify}
+    topTrackTitle={topTrack}
+    cityShort={cityLabel}
+    client:load
+  />
+  <About artist={artist} />
+  <Marquee press={artist.press} />
+  <Footer artist={artist} />
+</Layout>

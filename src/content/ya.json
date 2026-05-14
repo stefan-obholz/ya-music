@@ -1,11 +1,21 @@
 {
+  "slug": "ya",
   "name": "YA",
   "city": "Bradford, West Yorkshire",
   "areaCode": "01274",
   "tagline": "The kid from 01274.",
   "bio": "YA comes from the estates of Bradford, West Yorkshire. Razor-sharp rhymes over hard-hitting bassline beats. 20M+ streams independent. Featured in Red Bull's Red Bulletin. Recent album: Mind Of A Grafta (2025).",
+  "aboutHeadlineLines": ["The kid", "from", "01274"],
+  "bioParagraphs": [
+    "YA out of <strong>Bradford, West Yorkshire</strong> — razor-sharp rhymes over hard-hitting bassline beats, straight off the estates. 20M+ streams without a label, without a co-sign.",
+    "<em>Bradford Army</em> with KAV & Marky B alone clocked over 6 million streams. The 2025 album <em>Mind Of A Grafta</em> kept the run going, with new singles like <em>All I Know</em> and <em>German One</em> dropping in 2026. Featured in Red Bull's <em>Red Bulletin</em>. Consistent Top 10 on SoundCloud's all-genres charts."
+  ],
+  "footerHeadlineLines": ["Pick up.", "Anywhere."],
+  "footerCopy": "Follow YA where you stream, where you scroll, where you watch.",
+  "bookingHandle": "ya_01274",
   "stats": {
     "totalStreams": 20000000,
+    "totalStreamsDisplay": "20M+",
     "monthlyListeners": 142037,
     "spotifyFollowers": 31276
   },

@@ -4,6 +4,7 @@ import About from "../components/about/About.astro";
 import Marquee from "../components/press/Marquee.astro";
 import Footer from "../components/footer/Footer.astro";
 import DialScene from "../components/hero/DialScene.tsx";
+import ya from "../content/ya.json";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import DialScene from "../components/hero/DialScene.tsx";
   description="YA — UK rapper out of Bradford. 20M+ streams independent. The kid from 01274."
 >
   <DialScene client:load />
-  <About />
-  <Marquee />
-  <Footer />
+  <About artist={ya} />
+  <Marquee press={ya.press} />
+  <Footer artist={ya} />
 </Layout>

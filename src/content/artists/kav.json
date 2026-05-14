@@ -1,0 +1,77 @@
+{
+  "slug": "kav",
+  "name": "KAV",
+  "city": "Leeds, West Yorkshire",
+  "areaCode": "0113",
+  "tagline": "Charva essentials. Bassline gang.",
+  "bio": "KAV — fully independent bassline and rap artist born and raised in Leeds, West Yorkshire. Charva Essentials, Pretty Green Eyes, Bradford Army.",
+  "aboutHeadlineLines": ["Charva", "essentials.", "0113"],
+  "bioParagraphs": [
+    "KAV out of <strong>Leeds, West Yorkshire</strong> — fully independent bassline and rap artist focused on bassline and speed garage production with razor-sharp rap on top.",
+    "<em>Charva Essentials</em> alone clocked over 5.6 million streams. <em>Pretty Green Eyes</em>, <em>Charva Essentials Pt. 2</em>, plus the <em>Bradford Army</em> link-up with YA & Marky B that lit up the West Yorkshire bassline scene. The 2026 album <em>Get Over You</em> takes it further."
+  ],
+  "footerHeadlineLines": ["Tune in.", "Anywhere."],
+  "footerCopy": "Follow KAV across Spotify, YouTube and Instagram — bassline gang.",
+  "bookingHandle": "Kav_official1",
+  "stats": {
+    "totalStreams": 25000000,
+    "totalStreamsDisplay": "25M+",
+    "monthlyListeners": 195936,
+    "spotifyFollowers": 26581
+  },
+  "topTracks": [
+    { "title": "Charva Essentials", "feat": null, "streams": 5690298, "year": 2023 },
+    { "title": "In The House", "feat": "Sluggy Beats", "streams": 2590176, "year": 2024 },
+    { "title": "Charva Essentials, Pt. 2", "feat": null, "streams": 2184452, "year": 2024 },
+    { "title": "Pretty Green Eyes", "feat": null, "streams": 2106709, "year": 2024 },
+    { "title": "Numerous Bootings", "feat": "Allstars Remix", "streams": 1515778, "year": 2025 }
+  ],
+  "albums": [
+    { "title": "Get Over You", "year": 2026, "type": "Album" },
+    { "title": "Charva Essentials, Pt. 2", "year": 2024, "type": "EP" },
+    { "title": "Charva Essentials", "year": 2023, "type": "EP" }
+  ],
+  "recentReleases": [
+    { "title": "Take My Hand", "feat": null, "year": 2026, "type": "Single" },
+    { "title": "In The House (Bassline Gang)", "feat": null, "year": 2026, "type": "Single" },
+    { "title": "Shake That", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Get Gone", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Thinkin 'Bout The Boy", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Let's Get Wavy", "feat": null, "year": 2025, "type": "Single" },
+    { "title": "Let Him Go", "feat": "KAV & YA Remix", "year": 2025, "type": "Single" }
+  ],
+  "collaborators": ["YA", "Marky B", "Sluggy Beats", "Mush", "MC Innes", "Bailey Holmes", "Meathead"],
+  "press": [
+    "Charva Essentials · 5.6M streams",
+    "Bassline gang · West Yorkshire",
+    "Bradford Army w/ YA & Marky B",
+    "Numerous Bootings Allstars · 1.5M"
+  ],
+  "links": {
+    "spotify": "https://open.spotify.com/artist/1wj92TXbOIJAhbgA2WH7ZE",
+    "youtube": "https://www.youtube.com/@kav_official",
+    "instagram": "https://www.instagram.com/Kav_official1/"
+  },
+  "youtubeChannelId": "UCG-9zWg5no_MLqmsNV3xNCg",
+  "ogImage": "/og-kav.png",
+  "videos": [
+    {
+      "mp4": "/video/kav/clip-1.mp4",
+      "webm": "/video/kav/clip-1.webm",
+      "poster": "/video/kav/poster-1.jpg",
+      "track": "Charva Essentials"
+    },
+    {
+      "mp4": "/video/kav/clip-2.mp4",
+      "webm": "/video/kav/clip-2.webm",
+      "poster": "/video/kav/poster-2.jpg",
+      "track": "In The House"
+    },
+    {
+      "mp4": "/video/kav/clip-3.mp4",
+      "webm": "/video/kav/clip-3.webm",
+      "poster": "/video/kav/poster-3.jpg",
+      "track": "Pretty Green Eyes"
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 ---
-import ya from "../../content/ya.json";
-const items = [...ya.press, ...ya.press, ...ya.press];
+interface Props {
+  press: string[];
+}
+
+const { press } = Astro.props;
+const items = [...press, ...press, ...press];
 ---
 
 <section class="border-y border-concrete/10 overflow-hidden py-8 bg-asphalt">

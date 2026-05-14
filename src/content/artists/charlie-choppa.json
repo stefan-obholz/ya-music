@@ -1,0 +1,71 @@
+{
+  "slug": "charlie-choppa",
+  "name": "Charlie Choppa",
+  "city": "Bradford, West Yorkshire",
+  "areaCode": "01274",
+  "tagline": "Robbers and riders. Sliding.",
+  "bio": "Charlie Choppa — UK rap and bassline. Robbers and Riders, Sliding (with BBCC + Window Kid). Bradford organ-bassline scene.",
+  "aboutHeadlineLines": ["Robbers", "and", "riders"],
+  "bioParagraphs": [
+    "Charlie Choppa out of <strong>Bradford, West Yorkshire</strong> — UK rap and bassline up-and-comer with slick vocal passes over hard organ-bassline beats.",
+    "<em>Robbers and Riders</em> alone passed 5.6 million streams. <em>Sliding</em> with Bad Boy Chiller Crew & Window Kid hit 3.4 million. <em>Monopoly</em>, <em>Vibes</em>, <em>Feelings</em> — staple cuts in the Bradford organ-bassline rotation."
+  ],
+  "footerHeadlineLines": ["Slide in.", "Anywhere."],
+  "footerCopy": "Follow Charlie Choppa across Spotify, Apple Music and YouTube.",
+  "bookingHandle": "charliechoppa",
+  "stats": {
+    "totalStreams": 12000000,
+    "totalStreamsDisplay": "12M+",
+    "monthlyListeners": 73998,
+    "spotifyFollowers": 13020
+  },
+  "topTracks": [
+    { "title": "Robbers and Riders", "feat": null, "streams": 5626236, "year": 2022 },
+    { "title": "Sliding", "feat": "BBCC & Window Kid", "streams": 3385223, "year": 2023 },
+    { "title": "Monopoly", "feat": null, "streams": 881473, "year": 2024 },
+    { "title": "Vibes", "feat": null, "streams": 783130, "year": 2022 },
+    { "title": "Feelings", "feat": null, "streams": 775344, "year": 2023 }
+  ],
+  "albums": [],
+  "recentReleases": [
+    { "title": "Monopoly", "feat": null, "year": 2024, "type": "Single" },
+    { "title": "Sliding", "feat": "BBCC & Window Kid", "year": 2023, "type": "Single" },
+    { "title": "Feelings", "feat": null, "year": 2023, "type": "Single" },
+    { "title": "Robbers and Riders", "feat": null, "year": 2022, "type": "Single" },
+    { "title": "Vibes", "feat": null, "year": 2022, "type": "Single" }
+  ],
+  "collaborators": ["Bad Boy Chiller Crew", "Window Kid", "Becce J", "Rayner", "TEN10"],
+  "press": [
+    "Robbers and Riders · 5.6M streams",
+    "Sliding w/ BBCC + Window Kid · 3.4M",
+    "Bradford organ-bassline",
+    "UK rap · 73K monthly listeners"
+  ],
+  "links": {
+    "spotify": "https://open.spotify.com/artist/4aTBKDsrXC1os9HzfPuDTR",
+    "youtube": "https://www.youtube.com/@charliechoppa",
+    "instagram": "https://www.instagram.com/charliechoppa/"
+  },
+  "youtubeChannelId": "UCB4t-V4e3oC-TMLjSk8nmJg",
+  "ogImage": "/og-charlie-choppa.png",
+  "videos": [
+    {
+      "mp4": "/video/charlie-choppa/clip-1.mp4",
+      "webm": "/video/charlie-choppa/clip-1.webm",
+      "poster": "/video/charlie-choppa/poster-1.jpg",
+      "track": "Robbers and Riders"
+    },
+    {
+      "mp4": "/video/charlie-choppa/clip-2.mp4",
+      "webm": "/video/charlie-choppa/clip-2.webm",
+      "poster": "/video/charlie-choppa/poster-2.jpg",
+      "track": "Sliding"
+    },
+    {
+      "mp4": "/video/charlie-choppa/clip-3.mp4",
+      "webm": "/video/charlie-choppa/clip-3.webm",
+      "poster": "/video/charlie-choppa/poster-3.jpg",
+      "track": "Monopoly"
+    }
+  ]
+}

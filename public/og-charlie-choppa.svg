@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#1a0a05"/>
+      <stop offset="50%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.12 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="#ffffff" opacity="0.06" filter="url(#grain)"/>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#f5f5f0" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="64" y="78" font-family="'JetBrains Mono', monospace" font-size="13" fill="#f5f5f0" fill-opacity="0.45" letter-spacing="3">INBOUND · BRADFORD UK</text>
+  <circle cx="1062" cy="73" r="5" fill="#e10600"/>
+  <text x="1078" y="78" font-family="'JetBrains Mono', monospace" font-size="13" fill="#f5f5f0" fill-opacity="0.45" letter-spacing="3">LIVE</text>
+
+  <!-- CHARLIE CHOPPA wordmark — two lines -->
+  <text x="64" y="240" font-family="'Anton', 'Bebas Neue', 'Impact', sans-serif" font-size="180" fill="#f5f5f0" letter-spacing="-8">CHARLIE</text>
+  <text x="64" y="400" font-family="'Anton', 'Bebas Neue', 'Impact', sans-serif" font-size="180" fill="#f5f5f0" letter-spacing="-8">CHOPPA</text>
+
+  <!-- Eyebrow -->
+  <text x="710" y="218" font-family="'JetBrains Mono', monospace" font-size="14" fill="#ff4500" letter-spacing="4">// ROBBERS &amp; RIDERS</text>
+
+  <!-- 01274 sub -->
+  <text x="710" y="370" font-family="'Anton', 'Bebas Neue', 'Impact', sans-serif" font-size="140" fill="#ff4500" letter-spacing="-4">01274</text>
+
+  <line x1="64" y1="465" x2="1136" y2="465" stroke="#f5f5f0" stroke-opacity="0.15" stroke-width="1"/>
+
+  <text x="64" y="510" font-family="'Anton', 'Bebas Neue', 'Impact', sans-serif" font-size="36" fill="#f5f5f0" letter-spacing="-1">BRADFORD · 12M+ STREAMS · ORGAN BASSLINE</text>
+
+  <text x="64" y="572" font-family="'JetBrains Mono', monospace" font-size="13" fill="#f5f5f0" fill-opacity="0.6" letter-spacing="3">YA-MUSIC.COM/ARTISTS/CHARLIE-CHOPPA</text>
+  <text x="1136" y="572" font-family="'JetBrains Mono', monospace" font-size="13" fill="#f5f5f0" fill-opacity="0.4" letter-spacing="3" text-anchor="end">SCROLL ↓</text>
+</svg>

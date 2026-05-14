@@ -1,11 +1,56 @@
 ---
-import ya from "../../content/ya.json";
+interface Album {
+  title: string;
+  year: number;
+  type: string;
+}
+interface Release {
+  title: string;
+  feat?: string | null;
+  year: number;
+  type: string;
+}
+interface Track {
+  title: string;
+  feat?: string | null;
+  streams: number;
+  year?: number;
+}
+interface Stats {
+  totalStreams: number;
+  totalStreamsDisplay?: string;
+  monthlyListeners: number;
+  spotifyFollowers: number;
+}
+interface Artist {
+  name: string;
+  city: string;
+  areaCode: string;
+  aboutHeadlineLines: string[];
+  bioParagraphs: string[];
+  stats: Stats;
+  topTracks: Track[];
+  albums: Album[];
+  recentReleases?: Release[];
+}
+
+interface Props {
+  artist: Artist;
+}
+
+const { artist } = Astro.props;
+
+const totalStreamsDisplay =
+  artist.stats.totalStreamsDisplay ??
+  (artist.stats.totalStreams >= 1_000_000
+    ? `${(artist.stats.totalStreams / 1_000_000).toFixed(1).replace(/\.0$/, "")}M+`
+    : `${artist.stats.totalStreams.toLocaleString("en-GB")}`);
 
 const stats = [
-  { label: "Total streams", value: "20M+" },
-  { label: "Monthly listeners", value: ya.stats.monthlyListeners.toLocaleString("en-GB") },
+  { label: "Total streams", value: totalStreamsDisplay },
+  { label: "Monthly listeners", value: artist.stats.monthlyListeners.toLocaleString("en-GB") },
   { label: "City", value: "1" },
-  { label: "Area code", value: ya.areaCode },
+  { label: "Area code", value: artist.areaCode },
 ];
 
 const formatStreams = (n: number) => {
@@ -13,6 +58,8 @@ const formatStreams = (n: number) => {
   if (n >= 1_000) return `${Math.round(n / 1_000)}k`;
   return String(n);
 };
+
+const lines = artist.aboutHeadlineLines;
 ---
 
 <section id="about" class="relative border-t border-concrete/10 px-6 py-24 sm:px-10 sm:py-40">
@@ -23,20 +70,22 @@ const formatStreams = (n: number) => {
           // 01 — about
         </div>
         <h2 class="font-display mt-6 text-[12vw] leading-[0.85] text-concrete sm:text-[7vw] lg:text-[5vw]">
-          The kid<br/>from<br/><span class="text-traffic">01274</span>.
+          {lines.slice(0, -1).map((l, i) => (
+            <Fragment>
+              {l}{i < lines.length - 2 && <br/>}<br/>
+            </Fragment>
+          ))}
+          <span class="text-traffic">{lines[lines.length - 1]}</span>.
         </h2>
-        <p class="mt-8 max-w-md text-base leading-relaxed text-concrete/70">
-          YA out of <span class="text-concrete">{ya.city}</span> — razor-sharp rhymes over hard-hitting
-          bassline beats, straight off the estates. 20M+ streams without a label, without a co-sign.
-        </p>
-        <p class="mt-4 max-w-md text-base leading-relaxed text-concrete/70">
-          <em class="text-concrete not-italic">Bradford Army</em> with KAV & Marky B alone clocked over
-          6 million streams. The 2025 album <em class="text-concrete not-italic">Mind Of A Grafta</em>
-          kept the run going, with new singles like <em class="text-concrete not-italic">All I Know</em> and
-          <em class="text-concrete not-italic">German One</em> dropping in 2026.
-          Featured in Red Bull's <em class="text-concrete not-italic">Red Bulletin</em>. Consistent
-          Top 10 on SoundCloud's all-genres charts.
-        </p>
+        {artist.bioParagraphs.map((p, i) => (
+          <p
+            class:list={[
+              "max-w-md text-base leading-relaxed text-concrete/70",
+              i === 0 ? "mt-8" : "mt-4",
+            ]}
+            set:html={p}
+          />
+        ))}
       </div>
     </div>
 
@@ -54,49 +103,53 @@ const formatStreams = (n: number) => {
         ))}
       </div>
 
-      <div class="mt-16">
-        <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
-          // album
+      {artist.albums.length > 0 && (
+        <div class="mt-16">
+          <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+            // {artist.albums.length === 1 ? "album" : "albums"}
+          </div>
+          <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
+            {artist.albums.map((a) => (
+              <li class="flex items-baseline justify-between py-5">
+                <span class="font-display text-2xl uppercase tracking-tight text-concrete sm:text-3xl">
+                  {a.title}
+                </span>
+                <span class="font-mono text-xs text-concrete/40">{a.year} · {a.type}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
-          {ya.albums.map((a) => (
-            <li class="flex items-baseline justify-between py-5">
-              <span class="font-display text-2xl uppercase tracking-tight text-concrete sm:text-3xl">
-                {a.title}
-              </span>
-              <span class="font-mono text-xs text-concrete/40">{a.year} · {a.type}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      )}
 
-      <div class="mt-12">
-        <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
-          // recent drops
+      {artist.recentReleases && artist.recentReleases.length > 0 && (
+        <div class="mt-12">
+          <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
+            // recent drops
+          </div>
+          <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
+            {artist.recentReleases.map((r) => (
+              <li class="flex items-baseline justify-between py-3.5">
+                <span class="font-display flex-1 text-lg uppercase tracking-tight text-concrete sm:text-xl">
+                  {r.title}
+                  {r.feat && (
+                    <span class="ml-2 font-body text-xs lowercase tracking-normal text-concrete/40">
+                      feat. {r.feat}
+                    </span>
+                  )}
+                </span>
+                <span class="font-mono text-xs text-concrete/40">{r.year} · {r.type}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul class="mt-6 divide-y divide-concrete/10 border-y border-concrete/10">
-          {ya.recentReleases.map((r) => (
-            <li class="flex items-baseline justify-between py-3.5">
-              <span class="font-display flex-1 text-lg uppercase tracking-tight text-concrete sm:text-xl">
-                {r.title}
-                {r.feat && (
-                  <span class="ml-2 font-body text-xs lowercase tracking-normal text-concrete/40">
-                    feat. {r.feat}
-                  </span>
-                )}
-              </span>
-              <span class="font-mono text-xs text-concrete/40">{r.year} · {r.type}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      )}
 
       <div class="mt-16">
         <div class="font-mono text-[11px] uppercase tracking-[0.4em] text-concrete/40">
           // top tracks
         </div>
         <ol class="mt-6 space-y-3">
-          {ya.topTracks.map((t, i) => (
+          {artist.topTracks.map((t, i) => (
             <li class="group flex items-baseline gap-4 border-b border-concrete/5 py-3 transition-colors hover:border-traffic/40">
               <span class="w-8 font-mono text-[11px] text-concrete/40">
                 {String(i + 1).padStart(2, "0")}
